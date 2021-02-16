@@ -4,7 +4,7 @@ const ShowHide = () => {
   const [show, setShow] = useState(true)
   return (
     <>
-      <button className="btn" onclick={() => setShow(!show)}>
+      <button className="btn" onClick={() => setShow(!show)}>
         show/hide
       </button>
       {show && <Item />}
@@ -17,9 +17,9 @@ const Item = () => {
     setSize(window.innerWidth)
   }
   useEffect(() => {
-    size.addEventListener('resize', changeSize())
+    window.addEventListener('resize', changeSize)
     return () => {
-      size.removeEventListener('resize', changeSize())
+      window.removeEventListener('resize', changeSize)
     }
   }, [])
   return (
