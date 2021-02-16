@@ -9,7 +9,7 @@ const ShowHide = () => {
       </button>
       {show && <Item />}
     </>
-  );
+  )
 };
 
 const Item = () => {
