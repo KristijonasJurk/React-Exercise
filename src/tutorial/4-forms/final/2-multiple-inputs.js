@@ -1,9 +1,4 @@
 import React, { useState } from 'react';
-// JS
-// const input = document.getElementById('myText');
-// const inputValue = input.value
-// React
-// value, onChange
 
 const ControlledInputs = () => {
   const [person, setPerson] = useState({ firstName: '', email: '', age: '' });
@@ -59,8 +54,6 @@ const ControlledInputs = () => {
             add person
           </button>
         </form>
-      </article>
-      <article>
         {people.map((person) => {
           const { id, firstName, email, age } = person;
           return (

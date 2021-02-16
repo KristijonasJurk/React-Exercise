@@ -6,16 +6,14 @@ const ControlledInputs = () => {
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    setPerson({ ...people, [name]: value });
+    setPerson({ ...person, [name]: value });
   }
   const handleSubmit = (e) => {
     e.preventDefault();
     if (person.firstName && person.email && person.age) {
-      const newPerson = { ...people, id: new Date().getTime().toString() };
+      const newPerson = { ...person, id: new Date().getTime().toString() };
       setPeople([...people, newPerson])
       setPerson({ firstName: '', email: '', age: '' });
-    } else {
-      console.log('empty values');
     }
   };
   return (
