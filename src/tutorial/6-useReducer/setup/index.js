@@ -4,7 +4,20 @@ import { data } from '../../../data';
 // reducer function
 
 const Index = () => {
-  return <h2>useReducer</h2>;
+  const [name, setName] = useState('')
+  const [people, setPeople] = useState('')
+  const [showModal, setShowModal] = useState(false)
+  return <>
+    {showModal && <Modal />}
+    <form onSubmit={handleSubmit} className='form'>
+      <div>
+        <input
+          type="text"
+          value={name} onChange={(e) => setName(e.target.value)} />
+      </div>
+      <button type='submit'>add</button>
+    </form>
+  </>;
 };
 
 export default Index;
