@@ -26,6 +26,7 @@ const ReactRouterSetup = () => {
         <Route>
           <Error path='*' />
         </Route>
+        <Route path='/person/:id' children={<Person />}></Route>
       </Switch>
     </Router>
   );
