@@ -29,7 +29,10 @@ const Index = () => {
   )
 }
 
-const BigList = ({ products, addToCart }) => {
+const BigList = React.memo(({ products, addToCart }) => {
+  useEffect(() => {
+    console.count('count');
+  })
   return (
     <section className='products'>
       {products.map((product) => {
@@ -37,7 +40,7 @@ const BigList = ({ products, addToCart }) => {
       })}
     </section>
   )
-}
+})
 
 const SingleProduct = ({ fields, addToCart }) => {
   let { name, price } = fields
